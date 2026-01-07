@@ -124,7 +124,7 @@ const Contact = () => {
     
     try {
       const formData = new FormData(e.currentTarget);
-      const ACCESS_KEY = process.env.NEXT_PUBLIC_ACCESS_KEY || ""
+      const ACCESS_KEY = process.env.NEXT_PUBLIC_ACCESS_KEY || "3aea1664-489f-474e-a118-f0deb2eddd58"
       formData.append("access_key", ACCESS_KEY);
       
       const response = await fetch('https://api.web3forms.com/submit', {
