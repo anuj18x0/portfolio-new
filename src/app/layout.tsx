@@ -7,7 +7,7 @@ const urbanist = Urbanist({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Arth Arvind - Software Engineer",
-  description: "Fullstack Developer & AI Engineer | Building intelligent, scalable web applications with React, Next.js, Python, and AI/ML technologies",
+  description: "Software Developer & AI Engineer | Building intelligent, scalable web applications with Next.js, Python, and AI/ML technologies",
   keywords: ["Arth Arvind", "Software Engineer", "Fullstack Developer", "AI Engineer", "React", "Next.js", "Python", "Machine Learning", "Web Development", "Portfolio"],
   authors: [{ name: "Arth Arvind" }],
   creator: "Arth Arvind",
