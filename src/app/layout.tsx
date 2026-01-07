@@ -7,7 +7,15 @@ const urbanist = Urbanist({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Arth Arvind - Software Engineer",
-  description: "Software Engineer Portfolio",
+  description: "Fullstack Developer & AI Engineer | Building intelligent, scalable web applications with React, Next.js, Python, and AI/ML technologies",
+  icons: {
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' }
+    ],
+    apple: [
+      { url: '/icon.svg' }
+    ]
+  }
 };
 
 export default function RootLayout({

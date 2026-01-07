@@ -5,7 +5,7 @@ interface PreloaderProps {
   onComplete: () => void;
 }
 
-const TARGET_TEXT = "Arth Arvind - The Developer you definitely need";
+const TARGET_TEXT = "The Developer you definitely need";
 const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
 
 const Preloader = ({ onComplete }: PreloaderProps) => {
