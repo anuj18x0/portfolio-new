@@ -214,6 +214,11 @@ const Experience = () => {
       location: 'Remote',
       highlights: [
         {
+          title: 'Core Module Ownership',
+          description: 'Own and maintain 4+ core modules across the platform, ensuring code quality, scalability, and seamless integration with existing systems.',
+          icon: <Building2 className="w-5 h-5 text-orange-400" />,
+        },
+        {
           title: 'Real Estate Analytics & AI',
           description: 'Built a comprehensive Vancouver real-estate analytics pipeline tracking 10+ key metrics for data-driven investment decisions.',
           icon: <TrendingUp className="w-5 h-5 text-emerald-400" />,
@@ -224,8 +229,8 @@ const Experience = () => {
           icon: <Brain className="w-5 h-5 text-cyan-400" />,
         },
         {
-          title: 'Meta Automation Pipeline',
-          description: 'Developed automated social media pipelines reducing manual posting effort from hours to minutes with intelligent scheduling and content optimization.',
+          title: 'Lead Generation Automation',
+          description: 'Developed automated lead fetching systems from Craigslist and Reddit, streamlining client acquisition and reducing manual research time by 40%.',
           icon: <Zap className="w-5 h-5 text-purple-400" />,
         },
       ],
