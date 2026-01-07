@@ -55,16 +55,17 @@ const Hero = ({ startAnimation = false }: HeroProps): JSX.Element => {
         .fromTo(
           ".hero-cta",
           {
-            y: 20,
-            opacity: 0,
+            y: 30,
+            opacity: 1,
           },
           {
-            opacity: 1,
             y: 0,
-            duration: 1,
-            ease: "fade",
+            opacity: 1,
+            duration: 0.8,
+            stagger: 0,
+            ease: "elastic.out(1,0.3)",
           },
-          "-=0.5",
+          
         );
     }, component);
     return () => ctx.revert(); // cleanup!
