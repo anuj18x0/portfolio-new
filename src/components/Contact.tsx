@@ -119,7 +119,6 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    const ACCESS_KEY = process.env.WEBFORMS_ACCESS_KEY
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -127,7 +126,7 @@ const Contact = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          access_key: ACCESS_KEY, // Get this from web3forms.com
+          access_key: process.env.WEBFORMS_ACCESS_KEY, // Get this from web3forms.com
           name: formData.name,
           email: formData.email,
           message: formData.message,
@@ -140,13 +139,11 @@ const Contact = () => {
       if (result.success) {
         // Reset form
         setFormData({ name: '', email: '', message: '' });
-        alert('Message sent successfully! I&apos;ll get back to you soon.');
       } else {
         throw new Error('Form submission failed');
       }
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert('Failed to send message. Please try emailing me directly at artharvind18@gmail.com');
     } finally {
       setIsSubmitting(false);
     }
