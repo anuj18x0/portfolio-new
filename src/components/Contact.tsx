@@ -19,6 +19,7 @@ const Contact = () => {
     message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [result, setResult] = useState("");
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -116,34 +117,32 @@ const Contact = () => {
     },
   ];
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setResult("Sending....");
+    
     try {
+      const formData = new FormData(e.currentTarget);
+      const ACCESS_KEY = process.env.NEXT_PUBLIC_ACCESS_KEY || ""
+      formData.append("access_key", ACCESS_KEY);
+      
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          access_key: process.env.WEBFORMS_ACCESS_KEY, // Get this from web3forms.com
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-          subject: `New Portfolio Contact from ${formData.name}`,
-        }),
+        body: formData
       });
 
-      const result = await response.json();
+      const data = await response.json();
 
-      if (result.success) {
-        // Reset form
+      if (data.success) {
+        setResult("Message sent successfully! I'll get back to you soon.");
         setFormData({ name: '', email: '', message: '' });
       } else {
-        throw new Error('Form submission failed');
+        setResult(data.message || "Failed to send message. Please try again.");
       }
     } catch (error) {
       console.error('Error submitting form:', error);
+      setResult("Failed to send message. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -320,6 +319,18 @@ const Contact = () => {
                     )}
                   </button>
                 </div>
+
+                {result && (
+                  <div className={`form-element text-center p-4 rounded-lg ${
+                    result.includes("success") 
+                      ? "bg-emerald-500/10 border border-emerald-500/30 text-emerald-400" 
+                      : result.includes("Sending")
+                      ? "bg-cyan-500/10 border border-cyan-500/30 text-cyan-400"
+                      : "bg-rose-500/10 border border-rose-500/30 text-rose-400"
+                  }`}>
+                    <p className="text-sm font-medium">{result}</p>
+                  </div>
+                )}
 
                 <p className="form-element text-xs text-slate-500 text-center">
                   I&apos;ll get back to you as soon as possible, usually within 24 hours.

@@ -8,6 +8,27 @@ const urbanist = Urbanist({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Arth Arvind - Software Engineer",
   description: "Fullstack Developer & AI Engineer | Building intelligent, scalable web applications with React, Next.js, Python, and AI/ML technologies",
+  keywords: ["Arth Arvind", "Software Engineer", "Fullstack Developer", "AI Engineer", "React", "Next.js", "Python", "Machine Learning", "Web Development", "Portfolio"],
+  authors: [{ name: "Arth Arvind" }],
+  creator: "Arth Arvind",
+  publisher: "Arth Arvind",
+  openGraph: {
+    title: "Arth Arvind - Software Engineer & AI Developer",
+    description: "Fullstack Developer & AI Engineer specializing in React, Next.js, Python, and AI/ML technologies",
+    url: "https://artharvind.com",
+    siteName: "Arth Arvind Portfolio",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Arth Arvind - Software Engineer",
+    description: "Fullstack Developer & AI Engineer",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   icons: {
     icon: [
       { url: '/icon.svg', type: 'image/svg+xml' }

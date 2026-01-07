@@ -170,7 +170,7 @@ const TechStack = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-20 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 overflow-hidden"
+      className="py-20 "
     >
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="tech-title text-5xl md:text-6xl font-bold text-center mb-4 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 text-transparent bg-clip-text">
